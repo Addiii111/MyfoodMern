@@ -16,13 +16,15 @@ export default function Cart() {
   //   dispatch({type:"REMOVE",index:index})
   // }
 
-  const handleCheckOut = async () => {
+  const handleCheckOut = async (e) => {
+    e.preventDefault()
     let userEmail = localStorage.getItem('userEmail')
     // console.log(data,localStorage.getItem("userEmail"),new Date())
-    let response = await fetch('http://localhost:8000/api/auth/orderData', {
+    let response = await fetch('http://localhost:8000/api/orderData', {
       // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
+      // Origin:"http://localhost:3000",
       method: 'POST',
+      // httpOnly: true,
       headers: {
         'Content-Type': 'application/json',
       },

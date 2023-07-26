@@ -29,6 +29,7 @@ export default function Login() {
     }
 
     if (jso.success) {
+      localStorage.setItem('userEmail', credentials.email)
       localStorage.setItem('authToken', jso.authToken)
       console.log(localStorage.getItem('authToken'))
       navigate('/')
