@@ -25,9 +25,14 @@ export default function SignUp() {
     const jso = await response.json()
     console.log(jso)
 
+    
+
     if (!jso.success) {
       alert('Enter valid credentials')
+    }else {
+      alert('Registered Successfully')
     }
+
   }
 
   const onchange = (event) => {
